@@ -1,5 +1,16 @@
 # GitHub action for Jelastic CLI
 Performs some actions via Jelastic CLI via API
+
+## About This Fork
+
+This is a fork of the original [DovnarAlexander/github-actions-jelastic](https://github.com/DovnarAlexander/github-actions-jelastic) repository. The fork was necessary for the following reasons:
+
+- **Original repository no longer maintained**: The upstream repository is no longer actively supported
+- **Broken Docker image**: The original Dockerfile used a `FROM` image that no longer exists, causing build failures
+- **Updated base image**: Migrated to `eclipse-temurin:17-jdk-alpine` for a modern, maintained Java runtime
+- **Fixed Jelastic CLI installation**: The CLI installer was failing silently. Added proper error handling, moved installation files to correct locations, and fixed broken symlinks
+- **Enhanced error handling**: Improved error messages and debugging capabilities in the entrypoint scripts
+
 ## GitHub actions
 ### Inputs
 #### `jelastic_url`
